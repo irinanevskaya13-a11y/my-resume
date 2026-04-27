@@ -12,61 +12,60 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family:
 .scroll-container { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; }
 .page-section { height: 100vh; display: flex; justify-content: center; align-items: center; scroll-snap-align: start; padding: 20px; }
 
+/* УВЕЛИЧЕННЫЙ РАЗМЕР КАРТОЧКИ */
 .resume-wrapper {
-    max-width: 1050px; width: 100%; height: 700px;
-    background: var(--white); display: grid; grid-template-columns: 320px 1fr;
-    border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.05); overflow: hidden;
+    max-width: 1200px; /* Было 1050px */
+    width: 100%; 
+    height: 800px; /* Было 700px */
+    background: var(--white); 
+    display: grid; 
+    grid-template-columns: 350px 1fr; /* Увеличил сайдбар */
+    border-radius: 24px; 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.07); 
+    overflow: hidden;
 }
 
-.second-page { display: block; padding: 50px; }
+.second-page { display: block; padding: 60px; }
 
-/* ФОТО С ЭФФЕКТОМ УВЕЛИЧЕНИЯ */
-.sidebar { padding: 40px 30px; border-right: 1px solid #f5f5f5; text-align: center; }
+/* САЙДБАР И ФОТО */
+.sidebar { padding: 50px 40px; border-right: 1px solid #f5f5f5; text-align: center; }
 .photo { 
-    width: 160px; height: 160px; border-radius: 50%; object-fit: cover; 
-    border: 5px solid var(--accent-soft); margin-bottom: 20px; 
+    width: 180px; height: 180px; border-radius: 50%; object-fit: cover; 
+    border: 6px solid var(--accent-soft); margin-bottom: 25px; 
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
     cursor: pointer;
 }
 .photo:hover { 
-    transform: scale(1.1); /* Увеличение на 10% */
-    box-shadow: 0 10px 25px rgba(212, 165, 165, 0.4);
+    transform: scale(1.08); 
+    box-shadow: 0 15px 35px rgba(212, 165, 165, 0.4);
 }
 
-.tagline { color: var(--accent); font-weight: bold; font-size: 11px; text-transform: uppercase; margin-bottom: 20px; }
+.tagline { color: var(--accent); font-weight: bold; font-size: 12px; text-transform: uppercase; margin-bottom: 25px; }
 
-/* КОНТАКТЫ С ПОДСВЕТКОЙ */
-.contact-list { list-style: none; padding: 0; text-align: left; margin: 25px 0; }
-.contact-list li { margin-bottom: 12px; font-size: 14px; transition: 0.3s; }
-.contact-list a { 
-    color: var(--primary); 
-    text-decoration: none; 
-    border-bottom: 1px solid var(--accent-soft); 
-    transition: all 0.3s ease;
-}
-.contact-list li:hover { transform: translateX(5px); } /* Сдвиг при наведении */
-.contact-list a:hover { 
-    color: var(--accent); 
-    border-color: var(--accent); 
-}
+/* КОНТАКТЫ */
+.contact-list { list-style: none; padding: 0; text-align: left; margin: 30px 0; }
+.contact-list li { margin-bottom: 15px; font-size: 14px; transition: 0.3s; }
+.contact-list a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: all 0.3s ease; }
+.contact-list li:hover { transform: translateX(8px); }
+.contact-list a:hover { color: var(--accent); border-color: var(--accent); }
 
-.mini-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
-.mini-tags span { background: var(--bg-site); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.mini-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.mini-tags span { background: var(--bg-site); padding: 5px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; }
 
-/* ВКЛАДКИ */
-.main-content { padding: 40px 50px; position: relative; }
-.tabs-nav { display: inline-flex; gap: 8px; padding: 6px; background: #f1f5f9; border-radius: 14px; margin-bottom: 30px; }
-.tab-btn { border: none; padding: 10px 22px; cursor: pointer; border-radius: 10px; font-weight: 600; color: #64748b; background: none; transition: 0.3s; }
-.tab-btn.active { background: #fff; color: var(--accent); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+/* ОСНОВНОЙ КОНТЕНТ */
+.main-content { padding: 50px 70px; position: relative; }
+.tabs-nav { display: inline-flex; gap: 10px; padding: 6px; background: #f1f5f9; border-radius: 16px; margin-bottom: 40px; }
+.tab-btn { border: none; padding: 12px 25px; cursor: pointer; border-radius: 12px; font-weight: 600; color: #64748b; background: none; transition: 0.3s; }
+.tab-btn.active { background: #fff; color: var(--accent); box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
 
 /* КРУГОВЫЕ ШКАЛЫ */
-.circular-skills-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; margin-top: 30px; }
-.skill-circle-item { text-align: center; width: 120px; }
-.skill-circle-item p { font-size: 12px; font-weight: 700; margin-top: 10px; color: var(--primary); }
+.circular-skills-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
+.skill-circle-item { text-align: center; width: 130px; }
+.skill-circle-item p { font-size: 13px; font-weight: 700; margin-top: 15px; color: var(--primary); }
 
-.progress-circle { position: relative; width: 100px; height: 100px; margin: 0 auto; transition: 0.3s; }
-.progress-circle svg { width: 100px; height: 100px; transform: rotate(-90deg); }
-.progress-circle circle { fill: none; stroke-width: 8; stroke: #f1f5f9; stroke-linecap: round; }
+.progress-circle { position: relative; width: 110px; height: 110px; margin: 0 auto; transition: 0.3s; }
+.progress-circle svg { width: 110px; height: 110px; transform: rotate(-90deg); }
+.progress-circle circle { fill: none; stroke-width: 9; stroke: #f1f5f9; stroke-linecap: round; }
 .progress-circle circle.percent-fill {
     stroke: var(--accent); stroke-dasharray: 283;
     stroke-dashoffset: calc(283 - (283 * var(--percent)) / 100);
@@ -74,26 +73,34 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family:
 }
 @keyframes circleGrow { from { stroke-dashoffset: 283; } }
 
+.progress-circle .number h3 { font-size: 22px; color: var(--primary); margin: 0; }
 .progress-circle .number { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
-.progress-circle .number h3 { font-size: 20px; color: var(--primary); margin: 0; }
-.progress-circle .number h3 span { font-size: 12px; color: var(--accent); }
 
-/* ОПЫТ */
-.experience-item { margin-bottom: 25px; }
-.exp-header { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 5px; }
-.company { color: var(--accent); font-weight: bold; font-size: 14px; display: block; }
+/* ВТОРАЯ СТРАНИЦА И ХОВЕРЫ */
+.skills-detailed { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.detail-card, .soft-card { 
+    background: var(--bg-site); 
+    padding: 20px; 
+    border-radius: 15px; 
+    margin-bottom: 20px; 
+    border-left: 6px solid var(--accent); 
+    font-size: 15px; 
+    transition: all 0.3s ease; 
+}
 
-/* ВТОРАЯ СТРАНИЦА */
-.skills-detailed { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.detail-card, .soft-card { background: var(--bg-site); padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 5px solid var(--accent); font-size: 14px; transition: 0.3s; }
-.detail-card:hover { transform: translateX(5px); background: #fff; }
+/* Единый эффект наведения для обеих колонок */
+.detail-card:hover, .soft-card:hover { 
+    transform: translateX(10px); 
+    background: var(--white); 
+    box-shadow: 0 10px 25px rgba(212, 165, 165, 0.2);
+}
 
 .tab-content { display: none; }
 .active-content { display: block; }
 .fade-in { animation: fadeIn 0.5s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-.scroll-hint { position: absolute; bottom: 20px; color: var(--accent); font-size: 12px; animation: bounce 2s infinite; }
-@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+.scroll-hint { position: absolute; bottom: 30px; color: var(--accent); font-size: 13px; animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-@media (max-width: 900px) { .resume-wrapper { grid-template-columns: 1fr; height: auto; } .page-section { height: auto; } .scroll-container { overflow-y: auto; scroll-snap-type: none; } }
+@media (max-width: 1000px) { .resume-wrapper { grid-template-columns: 1fr; height: auto; } .page-section { height: auto; } .scroll-container { overflow-y: auto; scroll-snap-type: none; } }
