@@ -4,31 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- Иконка вкладки (📊) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><text y='80' font-size='80'>📊</text></svg>">
     <title>Резюме | Смирнова Ирина (AnalyticUnit)</title>
 </head>
 <body>
-    <!-- ИНДИКАТОР ПРОКРУТКИ -->
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar"></div>
-    </div>
-
-    <!-- КАСТОМНЫЙ КУРСОР -->
+    <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
     <div class="scroll-container">
-        <!-- СТРАНИЦА 1 -->
         <section class="page-section">
             <div class="resume-wrapper">
                 <aside class="sidebar">
                     <div class="profile-section">
                         <img src="photo.jpg" alt="Смирнова Ирина" class="photo">
                         <h1>Смирнова Ирина</h1>
-                        <p class="tagline">Системный аналитик (Industrial Data / BI)</p>
+                        <p class="tagline">Системный аналитик<br>(Industrial Data / BI)</p>
                     </div>
-                    
                     <section class="sidebar-block">
                         <h3>Контакты</h3>
                         <ul class="contact-list">
@@ -38,15 +30,10 @@
                             <li>🔗 <a href="https://t.me">Telegram</a></li>
                         </ul>
                     </section>
-
                     <section class="sidebar-block">
                         <h3>Hard Stack</h3>
                         <div class="mini-tags">
-                            <span>Apache Superset</span>
-                            <span>SQL/MySQL</span>
-                            <span>Python</span>
-                            <span>Matlab</span>
-                            <span>SCADA</span>
+                            <span>Apache Superset</span><span>SQL</span><span>Python</span><span>Matlab</span><span>SCADA</span>
                         </div>
                     </section>
                 </aside>
@@ -60,20 +47,18 @@
 
                     <div id="exp" class="tab-content active-content fade-in">
                         <div class="experience-item">
-                            <div class="exp-header"><h3>Инженер продуктового направления 2 кат.</h3><span>2024 — Наст. время</span></div>
+                            <div class="exp-header"><h3 class="accent-title">Инженер продуктового направления 2 кат.</h3><span>2024 — Наст. время</span></div>
                             <p class="company">ЭКРА</p>
                             <ul>
-                                <li><strong>Внедрение BI:</strong> развернула Apache Superset, настроила интеграцию данных из SCADA.</li>
-                                <li><strong>Алгоритмы:</strong> проектирование логики Sankey, Heatmap и "умных" осей для ПО EKRASCADA.</li>
-                                <li><strong>Python:</strong> создание тестовых приложений для верификации математических моделей.</li>
+                                <li><strong>Внедрение BI:</strong> развернула Apache Superset, настроила дашборды мониторинга ресурсов.</li>
+                                <li><strong>Алгоритмы:</strong> логика Sankey, Heatmap и "умных" осей для EKRASCADA.</li>
                             </ul>
                         </div>
                         <div class="experience-item">
-                            <div class="exp-header"><h3>Инженер 3 кат. / Инженер</h3><span>2020 — 2024</span></div>
+                            <div class="exp-header"><h3 class="accent-title">Инженер 3 кат. / Инженер</h3><span>2020 — 2024</span></div>
                             <p class="company">ЭКРА</p>
                             <ul>
-                                <li>Разработка сложных ТЗ по визуализации данных для IT-отдела.</li>
-                                <li>НИОКР: работа в Matlab Simulink, разработка алгоритмов для систем накопления энергии.</li>
+                                <li>ТЗ по визуализации данных и НИОКР в Matlab Simulink.</li>
                             </ul>
                         </div>
                     </div>
@@ -81,24 +66,15 @@
                     <div id="skills" class="tab-content fade-in">
                         <div class="circular-skills-container">
                             <div class="skill-circle-item">
-                                <div class="progress-circle" style="--percent: 90;">
-                                    <svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg>
-                                    <div class="number"><h3>90<span>%</span></h3></div>
-                                </div>
+                                <div class="progress-circle" style="--percent: 90;"><svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg><div class="number"><h3>90<span>%</span></h3></div></div>
                                 <p>BI & Viz</p>
                             </div>
                             <div class="skill-circle-item">
-                                <div class="progress-circle" style="--percent: 85;">
-                                    <svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg>
-                                    <div class="number"><h3>85<span>%</span></h3></div>
-                                </div>
+                                <div class="progress-circle" style="--percent: 85;"><svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg><div class="number"><h3>85<span>%</span></h3></div></div>
                                 <p>SQL</p>
                             </div>
                             <div class="skill-circle-item">
-                                <div class="progress-circle" style="--percent: 70;">
-                                    <svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg>
-                                    <div class="number"><h3>70<span>%</span></h3></div>
-                                </div>
+                                <div class="progress-circle" style="--percent: 70;"><svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg><div class="number"><h3>70<span>%</span></h3></div></div>
                                 <p>Python</p>
                             </div>
                         </div>
@@ -108,7 +84,6 @@
                         <div class="experience-item">
                             <p><strong>Магистр:</strong> Цифровые энергосистемы (ЧГУ), 2022</p>
                             <p><strong>Бакалавр:</strong> Электроснабжение (ЧГУ), 2020</p>
-                            <p><strong>English:</strong> B2 (Upper-Intermediate)</p>
                         </div>
                     </div>
                     <div class="scroll-hint">Листайте вниз к Soft Skills ↓</div>
@@ -116,31 +91,25 @@
             </div>
         </section>
 
-        <!-- СТРАНИЦА 2 -->
         <section class="page-section">
             <div class="resume-wrapper second-page">
                 <div class="skills-detailed">
                     <div class="skills-column">
-                        <h3>Hard Skills & Expertise</h3>
-                        <div class="detail-card"><strong>BI Matrix:</strong> Apache Superset (настройка, дашборды), Sankey, Heatmaps.</div>
-                        <div class="detail-card"><strong>Engineering:</strong> ТЗ для SCADA, АСКУЭ, ГОСТ, проектирование систем учета.</div>
-                        <div class="detail-card"><strong>Data Core:</strong> SQL (сложные запросы), Python (автоматизация и моделирование).</div>
+                        <h3 class="accent-title-page">Hard Skills & Expertise</h3>
+                        <div class="detail-card"><strong>BI Matrix:</strong> Apache Superset, Sankey, Heatmaps.</div>
+                        <div class="detail-card"><strong>Engineering:</strong> ТЗ для SCADA, АСКУЭ, ГОСТ.</div>
                     </div>
                     <div class="skills-column">
-                        <h3>Soft Skills</h3>
-                        <div class="soft-card"><strong>Self-management:</strong> Высокая автономность и дисциплина в удаленном формате.</div>
-                        <div class="soft-card"><strong>Адаптивность:</strong> Способность быстро осваивать новый софт и инструменты.</div>
-                        <div class="soft-card"><strong>Системность:</strong> Навык сбора требований и перевод задач на язык алгоритмов.</div>
-                        <div class="soft-card"><strong>Документация:</strong> Опыт разработки ТЗ, исключающих двоякое толкование.</div>
+                        <h3 class="accent-title-page">Soft Skills</h3>
+                        <div class="soft-card"><strong>Self-management:</strong> Высокая автономность и дисциплина.</div>
+                        <div class="soft-card"><strong>Адаптивность:</strong> Быстрое освоение нового стека.</div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- ЛОГИКА ИНТЕРФЕЙСА -->
     <script>
-        // Переключение вкладок
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -150,32 +119,23 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.classList.add("active");
         }
-
-        // Кастомный курсор
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
         window.addEventListener('mousemove', (e) => {
-            dot.style.left = e.clientX + 'px';
-            dot.style.top = e.clientY + 'px';
-            outline.style.left = e.clientX + 'px';
-            outline.style.top = e.clientY + 'px';
+            dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+            outline.style.left = e.clientX + 'px'; outline.style.top = e.clientY + 'px';
         });
-
-        // Эффект наведения курсора
-        const interactiveElements = document.querySelectorAll('a, button, .photo, .tab-btn, .detail-card, .soft-card');
-        interactiveElements.forEach(el => {
+        const links = document.querySelectorAll('a, button, .photo, .tab-btn, .detail-card, .soft-card');
+        links.forEach(el => {
             el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
         });
-
-        // Индикатор прокрутки
         const progressBar = document.querySelector('.scroll-progress-bar');
         const scrollContainer = document.querySelector('.scroll-container');
         scrollContainer.addEventListener('scroll', () => {
             const winScroll = scrollContainer.scrollTop;
             const height = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            progressBar.style.width = scrolled + "%";
+            progressBar.style.width = ((winScroll / height) * 100) + "%";
         });
     </script>
 </body>
