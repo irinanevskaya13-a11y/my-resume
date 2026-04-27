@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="scroll-container">
-        <!-- СТРАНИЦА 1: ГЛАВНАЯ И ОПЫТ -->
+        <!-- СТРАНИЦА 1: ОСНОВНОЕ РЕЗЮМЕ -->
         <section class="page-section">
             <div class="resume-wrapper">
                 <aside class="sidebar">
@@ -21,71 +21,80 @@
                         <h3>Контакты</h3>
                         <ul>
                             <li>📍 Чебоксары</li>
-                            <li>📞 +7 902 359-77-87</li>
                             <li>✉️ <a href="mailto:irinanevskaya13@gmail.com">Email</a></li>
+                            <li>🔗 <a href="https://t.me">Telegram</a></li>
                         </ul>
                     </section>
                 </aside>
+
                 <main class="main-content">
-                    <h2>Опыт работы</h2>
-                    <div class="experience-item">
-                        <div class="exp-header"><h3>Инженер продуктового направления 2 кат.</h3><span>2024 — Наст. время</span></div>
-                        <p class="company">ЭКРА</p>
-                        <ul>
-                            <li>Внедрение BI: развертывание Apache Superset, настройка дашбордов.</li>
-                            <li>Проектирование алгоритмов визуализации для ПО EKRASCADA.</li>
-                        </ul>
+                    <nav class="tabs-nav">
+                        <button class="tab-btn active" onclick="openTab(event, 'exp')">Опыт</button>
+                        <button class="tab-btn" onclick="openTab(event, 'hard')">Hard Skills</button>
+                    </nav>
+
+                    <div id="exp" class="tab-content active-content fade-in">
+                        <div class="experience-item">
+                            <div class="exp-header"><h3>Инженер 2 кат.</h3><span>2024 — Наст. время</span></div>
+                            <p class="company">ЭКРА</p>
+                            <ul>
+                                <li>Развертывание Apache Superset и настройка BI-дашбордов.</li>
+                                <li>Проектирование алгоритмов для ПО EKRASCADA.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="experience-item">
-                        <div class="exp-header"><h3>Инженер продуктового направления 3 кат.</h3><span>2022 — 2024</span></div>
-                        <p class="company">ЭКРА</p>
-                        <ul>
-                            <li>Разработка ТЗ, создание блок-схем и формул для IT-отдела.</li>
-                        </ul>
+
+                    <div id="hard" class="tab-content fade-in">
+                        <div class="progress-container">
+                            <div class="progress-item">
+                                <div class="progress-info"><span>Apache Superset / BI</span><span>90%</span></div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-info"><span>SQL & Python</span><span>80%</span></div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="scroll-hint">Листайте вниз ↓</div>
+                    <div class="scroll-hint">Листайте вниз к Soft Skills ↓</div>
                 </main>
             </div>
         </section>
 
-        <!-- СТРАНИЦА 2: НАВЫКИ -->
-        <section class="page-section bg-alt">
-            <div class="resume-wrapper no-sidebar">
-                <div class="skills-full-page">
+        <!-- СТРАНИЦА 2: ПОДРОБНЫЕ НАВЫКИ -->
+        <section class="page-section">
+            <div class="resume-wrapper second-page">
+                <div class="skills-detailed">
                     <div class="skills-column">
-                        <h2>Hard Skills</h2>
-                        <div class="skill-card-alt">
-                            <h4>Аналитика и визуализация</h4>
-                            <p>Apache Superset (развертывание), создание сложных дашбордов (Sankey, Heatmap, Спидометры).</p>
+                        <h2>Подробные Hard Skills</h2>
+                        <div class="detail-card">
+                            <strong>Аналитика:</strong> Apache Superset, Sankey, Heatmaps, Спидометры.
                         </div>
-                        <div class="skill-card-alt">
-                            <h4>Работа с данными</h4>
-                            <p>SQL (сложные запросы), Python (математические модели, автоматизация расчетов).</p>
-                        </div>
-                        <div class="skill-card-alt">
-                            <h4>Проектирование и Домен</h4>
-                            <p>ТЗ для SCADA-систем, АСКУЭ, Электроэнергетика, приборы учета.</p>
+                        <div class="detail-card">
+                            <strong>Проектирование:</strong> ТЗ для SCADA, АСКУЭ, ГОСТ документация.
                         </div>
                     </div>
-                    
                     <div class="skills-column">
                         <h2>Soft Skills</h2>
-                        <div class="soft-skill-item">
-                            <strong>Self-management:</strong> Высокая автономность на удаленке, дисциплина дедлайнов.
-                        </div>
-                        <div class="soft-skill-item">
-                            <strong>Адаптивность:</strong> Быстрое самостоятельное освоение Superset, SQL, Python.
-                        </div>
-                        <div class="soft-skill-item">
-                            <strong>Системное мышление:</strong> Перевод бизнес-задач на язык алгоритмов.
-                        </div>
-                        <div class="soft-skill-item">
-                            <strong>Работа с документацией:</strong> Разработка ТЗ, исключающих двоякое толкование.
-                        </div>
+                        <div class="soft-card"><strong>Self-management:</strong> Автономность и дисциплина на удаленке.</div>
+                        <div class="soft-card"><strong>Адаптивность:</strong> Быстрое освоение стека (SQL, Python).</div>
+                        <div class="soft-card"><strong>Системность:</strong> Перевод бизнеса на язык алгоритмов.</div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+
+    <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+    </script>
 </body>
 </html>
