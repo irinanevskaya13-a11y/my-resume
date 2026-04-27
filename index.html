@@ -29,7 +29,6 @@
         <section class="page-section" id="page1">
             <div class="resume-wrapper">
                 <aside class="sidebar">
-                    <!-- Контейнер для фото (JPG -> GIF) -->
                     <div class="profile-section">
                         <div class="photo-container">
                             <img src="photo.jpg" alt="Смирнова Ирина" class="photo static-photo">
@@ -39,7 +38,6 @@
                         <p class="tagline">Системный аналитик<br>(Industrial Data / BI)</p>
                     </div>
 
-                    <!-- Контакты (со сдвигом при наведении) -->
                     <section class="sidebar-block">
                         <h3>Контакты</h3>
                         <ul class="contact-list">
@@ -50,7 +48,6 @@
                         </ul>
                     </section>
 
-                    <!-- Hard Stack -->
                     <section class="sidebar-block">
                         <h3>Hard Stack</h3>
                         <div class="mini-tags">
@@ -75,8 +72,8 @@
                             <div class="exp-header"><h3 class="accent-title">Инженер продуктового направления 2 кат.</h3><span>2024 — Наст. время</span></div>
                             <p class="company">ЭКРА</p>
                             <ul>
-                                <li>Развертывание <strong>Apache Superset</strong> и настройка BI-дашбордов.</li>
-                                <li>Проектирование алгоритмов визуализации данных (Sankey, Heatmap).</li>
+                                <li style="color: white; margin-bottom: 8px;">Развертывание <strong>Apache Superset</strong> и настройка BI-дашбордов.</li>
+                                <li style="color: white;">Проектирование алгоритмов визуализации данных (Sankey, Heatmap).</li>
                             </ul>
                         </div>
                     </div>
@@ -123,15 +120,19 @@
         <section class="page-section" id="page2">
             <div class="resume-wrapper second-page">
                 <div class="skills-detailed">
+                    <!-- ЛЕВАЯ КОЛОНКА (HARD SKILLS) -->
                     <div class="skills-column">
                         <h3 class="accent-title-page">Hard Skills & Expertise</h3>
                         <div class="detail-card"><strong>BI Matrix:</strong> Apache Superset, Sankey, Heatmaps.</div>
                         <div class="detail-card"><strong>Engineering:</strong> ТЗ для SCADA, АСКУЭ, ГОСТ.</div>
                     </div>
+                    <!-- ПРАВАЯ КОЛОНКА (SOFT SKILLS С ТУЛТИПОМ) -->
                     <div class="skills-column">
                         <h3 class="accent-title-page">Soft Skills</h3>
-                        <div class="soft-card"><strong>Self-management:</strong> Высокая автономность и дисциплина.</div>
-                        <div class="soft-card"><strong>Адаптивность:</strong> Быстрое освоение нового стека.</div>
+                        <div class="soft-card interactive has-tooltip" data-tooltip="Самостоятельно изучила и внедрила Apache Superset в экосистему компании за пару месяцев, не имея готовой экспертизы внутри команды">
+                            <strong>Self-management:</strong> Высокая автономность и дисциплина.
+                        </div>
+                        <div class="soft-card interactive"><strong>Адаптивность:</strong> Быстрое освоение нового стека.</div>
                     </div>
                 </div>
             </div>
@@ -146,7 +147,6 @@
         const downArrow = document.getElementById('downArrow');
         let isAnimating = false;
 
-        // Логика вкладок
         function openTab(evt, tabName) {
             const contents = document.querySelectorAll(".tab-content");
             contents.forEach(c => { c.style.display = "none"; c.classList.remove("active-content"); });
@@ -158,7 +158,6 @@
             evt.currentTarget.classList.add("active");
         }
 
-        // Плавная прокрутка
         function scrollToPage(pageIndex) {
             if (isAnimating) return;
             isAnimating = true;
@@ -166,7 +165,6 @@
             setTimeout(() => { isAnimating = false; }, 800);
         }
 
-        // Обработка колесика
         scrollContainer.addEventListener('wheel', (e) => {
             e.preventDefault();
             if (isAnimating) return;
@@ -175,7 +173,6 @@
             else if (e.deltaY < 0 && currentPage > 0) scrollToPage(0);
         }, { passive: false });
 
-        // Слежение за скроллом
         scrollContainer.addEventListener('scroll', () => {
             const scrollTop = scrollContainer.scrollTop;
             const height = scrollContainer.scrollHeight - scrollContainer.clientHeight;
@@ -184,22 +181,20 @@
             dots.forEach((dot, i) => dot.classList.toggle('active', i === currentPage));
             if (currentPage === 0) {
                 upArrow.style.opacity = "0"; upArrow.style.pointerEvents = "none";
-                downArrow.style.opacity = "1"; downArrow.style.pointerEvents = "auto";
-                downArrow.classList.add('blink');
+                downArrow.style.opacity = "1"; downArrow.classList.add('blink');
             } else {
-                upArrow.style.opacity = "1"; upArrow.style.pointerEvents = "auto";
-                downArrow.style.opacity = "0"; downArrow.style.pointerEvents = "none";
+                upArrow.style.opacity = "1"; downArrow.style.opacity = "0";
                 downArrow.classList.remove('blink');
             }
         });
 
-        // Курсор
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
         window.addEventListener('mousemove', (e) => {
             dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
             outline.style.left = e.clientX + 'px'; outline.style.top = e.clientY + 'px';
         });
+
         const links = document.querySelectorAll('a, button, .photo-container, .tab-btn, .detail-card, .soft-card, .nav-dot, .nav-arrow, .contact-list li');
         links.forEach(el => {
             el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
