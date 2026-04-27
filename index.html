@@ -12,10 +12,12 @@
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- ТОЧКИ ПРОКРУТКИ -->
+    <!-- ТОЧКИ ПРОКРУТКИ СО СТРЕЛКАМИ -->
     <div class="scroll-nav">
+        <div class="nav-arrow up" id="upArrow" onclick="scrollToPage(0)">↑</div>
         <div class="nav-dot active" onclick="scrollToPage(0)"></div>
         <div class="nav-dot" onclick="scrollToPage(1)"></div>
+        <div class="nav-arrow down blink" id="downArrow" onclick="scrollToPage(1)">↓</div>
     </div>
 
     <div class="scroll-container" id="mainContainer">
@@ -116,8 +118,9 @@
         const scrollContainer = document.querySelector('.scroll-container');
         const progressBar = document.querySelector('.scroll-progress-bar');
         const dots = document.querySelectorAll('.nav-dot');
+        const upArrow = document.getElementById('upArrow');
+        const downArrow = document.getElementById('downArrow');
 
-        // Логика вкладок
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -128,28 +131,39 @@
             evt.currentTarget.classList.add("active");
         }
 
-        // Перемотка по точкам
         function scrollToPage(pageIndex) {
             const height = scrollContainer.clientHeight;
-            scrollContainer.scrollTo({
-                top: pageIndex * height,
-                behavior: 'smooth'
-            });
+            scrollContainer.scrollTo({ top: pageIndex * height, behavior: 'smooth' });
         }
 
-        // Слежение за скроллом (индикатор + точки)
         scrollContainer.addEventListener('scroll', () => {
             const scrollTop = scrollContainer.scrollTop;
             const height = scrollContainer.scrollHeight - scrollContainer.clientHeight;
             const scrolled = (scrollTop / height) * 100;
             progressBar.style.width = scrolled + "%";
 
-            // Переключение активной точки
             const currentPage = Math.round(scrollTop / scrollContainer.clientHeight);
+            
+            // Обновление точек
             dots.forEach((dot, index) => {
                 if (index === currentPage) dot.classList.add('active');
                 else dot.classList.remove('active');
             });
+
+            // Логика стрелок
+            if (currentPage === 0) {
+                upArrow.style.opacity = "0";
+                upArrow.style.pointerEvents = "none";
+                downArrow.style.opacity = "1";
+                downArrow.style.pointerEvents = "auto";
+                downArrow.classList.add('blink');
+            } else {
+                upArrow.style.opacity = "1";
+                upArrow.style.pointerEvents = "auto";
+                downArrow.style.opacity = "0";
+                downArrow.style.pointerEvents = "none";
+                downArrow.classList.remove('blink');
+            }
         });
 
         // Кастомный курсор
@@ -162,7 +176,7 @@
             outline.style.top = e.clientY + 'px';
         });
 
-        const links = document.querySelectorAll('a, button, .photo, .tab-btn, .detail-card, .soft-card, .nav-dot');
+        const links = document.querySelectorAll('a, button, .photo, .tab-btn, .detail-card, .soft-card, .nav-dot, .nav-arrow');
         links.forEach(el => {
             el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
