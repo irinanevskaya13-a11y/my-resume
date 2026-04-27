@@ -1,8 +1,8 @@
 :root {
-    --primary: #2f3635;      /* Глубокий графит для текста */
-    --accent: #7ba098;       /* Светлый хвойный шалфей (теперь точно цветной) */
-    --accent-soft: #e8f0ee;  /* Очень нежный шалфей для подложек */
-    --bg-site: #f8faf9;      /* Чистый светлый фон */
+    --primary: #2f3635;
+    --accent: #7ba098;
+    --accent-soft: #e8f0ee;
+    --bg-site: #f8faf9;
     --white: #ffffff;
 }
 
@@ -31,9 +31,10 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family:
 .photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 6px solid var(--accent-soft); margin-bottom: 25px; transition: 0.4s; }
 .photo:hover { transform: scale(1.08); box-shadow: 0 15px 35px rgba(123, 160, 152, 0.3); }
 .tagline { color: var(--accent); font-weight: 800; font-size: 14px; text-transform: uppercase; margin-bottom: 25px; line-height: 1.4; }
-.contact-list { list-style: none; padding: 0; text-align: left; margin: 30px 0; font-size: 14px; }
+.contact-list { list-style: none; padding: 0; text-align: left; margin: 30px auto; max-width: 250px; font-size: 14px; }
 .contact-list a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: 0.3s; }
 .contact-list a:hover { color: var(--accent); border-color: var(--accent); }
+.mini-tags span { background: var(--bg-site); padding: 5px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; margin: 3px; display: inline-block; }
 
 /* КОНТЕНТ */
 .main-content { padding: 50px 70px; position: relative; }
@@ -41,7 +42,6 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family:
 .tab-btn { border: none; padding: 12px 25px; cursor: pointer; border-radius: 12px; font-weight: 600; color: #6e7a78; background: none; transition: 0.3s; }
 .tab-btn.active { background: #fff; color: var(--accent); box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
 
-/* АКЦЕНТЫ */
 .accent-title { color: var(--accent) !important; font-weight: 700; }
 .accent-title-page { color: var(--accent); font-size: 24px; margin-bottom: 30px; border-bottom: 2px solid var(--accent-soft); padding-bottom: 10px; }
 
@@ -49,17 +49,21 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family:
 .circular-skills-container { display: flex; justify-content: space-around; gap: 20px; margin-top: 20px; }
 .skill-circle-item { text-align: center; width: 150px; display: flex; flex-direction: column; align-items: center; }
 .skill-label { font-size: 15px; font-weight: 700; margin-top: 20px; text-align: center; }
-.progress-circle { position: relative; width: 110px; height: 110px; }
+.progress-circle { position: relative; width: 110px; height: 110px; margin: 0 auto; }
 .progress-circle svg { width: 110px; height: 110px; transform: rotate(-90deg); }
 .progress-circle circle { fill: none; stroke-width: 9; stroke: #f1f5f4; stroke-linecap: round; }
 .progress-circle circle.percent-fill { stroke: var(--accent); stroke-dasharray: 314; stroke-dashoffset: calc(314 - (314 * var(--percent)) / 100); animation: grow 1.5s ease-out forwards; }
 @keyframes grow { from { stroke-dashoffset: 314; } }
 .progress-circle .number { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 22px; font-weight: bold; }
 
-/* КАРТОЧКИ */
+/* КАРТОЧКИ И MERMAID */
 .skills-detailed { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
 .detail-card, .soft-card { background: var(--accent-soft); padding: 20px; border-radius: 15px; margin-bottom: 20px; border-left: 6px solid var(--accent); transition: 0.3s; }
 .detail-card:hover, .soft-card:hover { transform: translateX(10px); background: #fff; box-shadow: 0 10px 25px rgba(123, 160, 152, 0.15); }
+
+.mermaid-block { margin-top: 30px; padding: 20px; background: #ffffff; border-radius: 15px; border: 1px solid var(--accent-soft); text-align: center; }
+.mermaid-block h4 { margin: 0 0 15px 0; font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+.mermaid svg { max-width: 100%; height: auto; }
 
 .tab-content { display: none; }
 .active-content { display: block; }
