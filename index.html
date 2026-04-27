@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Иконка вкладки 📊 -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><text y='80' font-size='80'>📊</text></svg>">
-    <title>Резюме | Смирнова Ирина</title>
+    <title>AnalyticUnit | Смирнова Ирина</title>
 </head>
 <body>
-    <!-- Прогресс скролла -->
+    <!-- Индикатор прокрутки -->
     <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
 
-    <!-- Курсор -->
+    <!-- Кастомный курсор -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
@@ -43,6 +44,7 @@
                         <button class="tab-btn" onclick="openTab(event, 'edu')">Образование</button>
                     </nav>
 
+                    <!-- ВКЛАДКА: ОПЫТ -->
                     <div id="exp" class="tab-content active-content fade-in">
                         <div class="experience-item">
                             <div class="exp-header"><h3 class="accent-title">Инженер продуктового направления 2 кат.</h3><span>2024 — Наст. время</span></div>
@@ -54,6 +56,7 @@
                         </div>
                     </div>
 
+                    <!-- ВКЛАДКА: НАВЫКИ (ЧИСТЫЕ ДИАГРАММЫ) -->
                     <div id="skills" class="tab-content fade-in">
                         <div class="circular-skills-container">
                             <div class="skill-circle-item">
@@ -61,25 +64,26 @@
                                     <svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg>
                                     <div class="number">90%</div>
                                 </div>
-                                <p class="skill-label">BI & Viz (Superset)</p>
+                                <p class="skill-label">BI & Viz<br>(Superset)</p>
                             </div>
                             <div class="skill-circle-item">
                                 <div class="progress-circle" style="--percent: 85;">
                                     <svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg>
                                     <div class="number">85%</div>
                                 </div>
-                                <p class="skill-label">SQL (MySQL/BI)</p>
+                                <p class="skill-label">SQL<br>(MySQL/BI)</p>
                             </div>
                             <div class="skill-circle-item">
                                 <div class="progress-circle" style="--percent: 70;">
                                     <svg><circle cx="55" cy="55" r="50"></circle><circle cx="55" cy="55" r="50" class="percent-fill"></circle></svg>
                                     <div class="number">70%</div>
                                 </div>
-                                <p class="skill-label">Python (Models)</p>
+                                <p class="skill-label">Python<br>(Models)</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- ВКЛАДКА: ОБРАЗОВАНИЕ -->
                     <div id="edu" class="tab-content fade-in">
                         <div class="experience-item">
                             <p><strong>Магистр:</strong> Цифровые энергосистемы (ЧГУ), 2022</p>
@@ -120,17 +124,22 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.classList.add("active");
         }
+
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
         window.addEventListener('mousemove', (e) => {
-            dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
-            outline.style.left = e.clientX + 'px'; outline.style.top = e.clientY + 'px';
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+            outline.style.left = e.clientX + 'px';
+            outline.style.top = e.clientY + 'px';
         });
+
         const links = document.querySelectorAll('a, button, .photo, .tab-btn, .detail-card, .soft-card');
         links.forEach(el => {
             el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
         });
+
         const progressBar = document.querySelector('.scroll-progress-bar');
         const scrollContainer = document.querySelector('.scroll-container');
         scrollContainer.addEventListener('scroll', () => {
