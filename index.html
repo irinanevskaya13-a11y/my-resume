@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Иконка вкладки 📊 -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><text y='80' font-size='80'>📊</text></svg>">
     <title>AnalyticUnit | Смирнова Ирина</title>
 </head>
 <body>
+    <!-- Индикатор прокрутки (сверху) -->
     <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
+
+    <!-- Кастомный курсор -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
+    <!-- Точки прокрутки со стрелками -->
     <div class="scroll-nav">
         <div class="nav-arrow up" id="upArrow" onclick="scrollToPage(0)">↑</div>
         <div class="nav-dot active" onclick="scrollToPage(0)"></div>
@@ -24,11 +29,17 @@
         <section class="page-section" id="page1">
             <div class="resume-wrapper">
                 <aside class="sidebar">
+                    <!-- Контейнер для фото (JPG -> GIF) -->
                     <div class="profile-section">
-                        <img src="photo.jpg" alt="Смирнова Ирина" class="photo">
+                        <div class="photo-container">
+                            <img src="photo.jpg" alt="Смирнова Ирина" class="photo static-photo">
+                            <img src="photo.gif" alt="Смирнова Ирина" class="photo gif-photo">
+                        </div>
                         <h1>Смирнова Ирина</h1>
                         <p class="tagline">Системный аналитик<br>(Industrial Data / BI)</p>
                     </div>
+
+                    <!-- Контакты (со сдвигом при наведении) -->
                     <section class="sidebar-block">
                         <h3>Контакты</h3>
                         <ul class="contact-list">
@@ -38,10 +49,16 @@
                             <li>🔗 <a href="https://t.me">Telegram</a></li>
                         </ul>
                     </section>
+
+                    <!-- Hard Stack -->
                     <section class="sidebar-block">
                         <h3>Hard Stack</h3>
                         <div class="mini-tags">
-                            <span>Apache Superset</span><span>SQL/MySQL</span><span>Python</span><span>Matlab</span><span>SCADA</span>
+                            <span>Apache Superset</span>
+                            <span>SQL/MySQL</span>
+                            <span>Python</span>
+                            <span>Matlab</span>
+                            <span>SCADA</span>
                         </div>
                     </section>
                 </aside>
@@ -53,19 +70,17 @@
                         <button class="tab-btn" onclick="openTab(event, 'edu')">Образование</button>
                     </nav>
 
-                    <!-- ОПЫТ (Активна по умолчанию) -->
                     <div id="exp" class="tab-content active-content fade-in">
                         <div class="experience-item">
                             <div class="exp-header"><h3 class="accent-title">Инженер продуктового направления 2 кат.</h3><span>2024 — Наст. время</span></div>
                             <p class="company">ЭКРА</p>
                             <ul>
-                                <li style="color: white; margin-bottom: 8px;">Развертывание <strong>Apache Superset</strong> и настройка BI-дашбордов.</li>
-                                <li style="color: white;">Проектирование алгоритмов визуализации данных (Sankey, Heatmap).</li>
+                                <li>Развертывание <strong>Apache Superset</strong> и настройка BI-дашбордов.</li>
+                                <li>Проектирование алгоритмов визуализации данных (Sankey, Heatmap).</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- НАВЫКИ (Скрыта) -->
                     <div id="skills" class="tab-content fade-in">
                         <div class="circular-skills-container">
                             <div class="skill-circle-item">
@@ -92,7 +107,6 @@
                         </div>
                     </div>
 
-                    <!-- ОБРАЗОВАНИЕ (Скрыта) -->
                     <div id="edu" class="tab-content fade-in">
                         <div class="experience-item" style="color: white;">
                             <p><strong>Магистр:</strong> Цифровые энергосистемы (ЧГУ), 2022</p>
@@ -132,60 +146,61 @@
         const downArrow = document.getElementById('downArrow');
         let isAnimating = false;
 
-        // ИСПРАВЛЕННАЯ ЛОГИКА ВКЛАДОК
+        // Логика вкладок
         function openTab(evt, tabName) {
             const contents = document.querySelectorAll(".tab-content");
-            contents.forEach(content => {
-                content.style.display = "none";
-                content.classList.remove("active-content");
-            });
-
+            contents.forEach(c => { c.style.display = "none"; c.classList.remove("active-content"); });
             const buttons = document.querySelectorAll(".tab-btn");
-            buttons.forEach(btn => btn.classList.remove("active"));
-
-            const selectedTab = document.getElementById(tabName);
-            selectedTab.style.display = "block";
-            setTimeout(() => selectedTab.classList.add("active-content"), 10);
-            
+            buttons.forEach(b => b.classList.remove("active"));
+            const selected = document.getElementById(tabName);
+            selected.style.display = "block";
+            setTimeout(() => selected.classList.add("active-content"), 10);
             evt.currentTarget.classList.add("active");
         }
 
+        // Плавная прокрутка
         function scrollToPage(pageIndex) {
+            if (isAnimating) return;
             isAnimating = true;
             scrollContainer.scrollTo({ top: pageIndex * scrollContainer.clientHeight, behavior: 'smooth' });
             setTimeout(() => { isAnimating = false; }, 800);
         }
 
+        // Обработка колесика
         scrollContainer.addEventListener('wheel', (e) => {
-            if (isAnimating) return;
             e.preventDefault();
+            if (isAnimating) return;
             const currentPage = Math.round(scrollContainer.scrollTop / scrollContainer.clientHeight);
             if (e.deltaY > 0 && currentPage < 1) scrollToPage(1);
             else if (e.deltaY < 0 && currentPage > 0) scrollToPage(0);
         }, { passive: false });
 
+        // Слежение за скроллом
         scrollContainer.addEventListener('scroll', () => {
             const scrollTop = scrollContainer.scrollTop;
             const height = scrollContainer.scrollHeight - scrollContainer.clientHeight;
             progressBar.style.width = (scrollTop / height * 100) + "%";
             const currentPage = Math.round(scrollTop / scrollContainer.clientHeight);
             dots.forEach((dot, i) => dot.classList.toggle('active', i === currentPage));
-            
             if (currentPage === 0) {
-                upArrow.style.opacity = "0"; downArrow.style.opacity = "1";
+                upArrow.style.opacity = "0"; upArrow.style.pointerEvents = "none";
+                downArrow.style.opacity = "1"; downArrow.style.pointerEvents = "auto";
+                downArrow.classList.add('blink');
             } else {
-                upArrow.style.opacity = "1"; downArrow.style.opacity = "0";
+                upArrow.style.opacity = "1"; upArrow.style.pointerEvents = "auto";
+                downArrow.style.opacity = "0"; downArrow.style.pointerEvents = "none";
+                downArrow.classList.remove('blink');
             }
         });
 
+        // Курсор
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
         window.addEventListener('mousemove', (e) => {
             dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
             outline.style.left = e.clientX + 'px'; outline.style.top = e.clientY + 'px';
         });
-
-        const links = document.querySelectorAll('a, button, .photo, .tab-btn, .detail-card, .soft-card, .nav-dot, .nav-arrow, .contact-list li');
+        const links = document.querySelectorAll('a, button, .photo-container, .tab-btn, .detail-card, .soft-card, .nav-dot, .nav-arrow, .contact-list li');
         links.forEach(el => {
             el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
