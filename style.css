@@ -330,7 +330,7 @@ html, body {
 
 /* 2. "Вытягиваем" контейнер с картинкой вверх */
 .image-display-container {
-    margin-top: -20px !important; /* ОТРИЦАТЕЛЬНЫЙ ОТСТУП: тянет картинку вверх */
+    margin-top: -10px !important; /* ОТРИЦАТЕЛЬНЫЙ ОТСТУП: тянет картинку вверх */
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Прижимает картинку к верхнему краю своего блока */
@@ -342,39 +342,6 @@ html, body {
     display: block;
     margin: 0 auto;
     /* Убедись, что анимация (scale) отключена, как ты просила ранее */
-}
-
-
-
-
-
-
-
-
-/* Состояние картинки при клике (на весь экран) */
-.portfolio-image.full-view {
-    position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) scale(1) !important;
-    width: 90vw !important;
-    height: 90vh !important;
-    object-fit: contain !important;
-    z-index: 100000 !important; /* Поверх всего */
-    background: rgba(15, 23, 42, 0.95);
-    padding: 20px;
-    border-radius: 0;
-    cursor: zoom-out;
-}
-
-/* Затемнение фона при увеличении */
-body.modal-open::after {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 99999;
 }
 
 
