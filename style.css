@@ -251,14 +251,7 @@ html, body {
 
 /* ТРЕТЬЯ СТРАНИЦА */
 /* Контейнер для центрирования изображения */
-.image-display-container {
-    flex: 1; /* Занимает всё свободное место в main-content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 10px 0;
-}
+
 .portfolio-desc {
     color: white; 
     line-height: 1.6; 
@@ -273,7 +266,7 @@ html, body {
     align-items: center;
     overflow: hidden;
     padding-bottom: 5px; /* Отступ от картинки до кнопки внизу */
-     margin-top: -60px !important; /* Увеличил число, чтобы эффект был заметен сразу */
+     margin-top: -10px !important; /* Увеличил число, чтобы эффект был заметен сразу */
     display: block !important;    /* Отключаем flex, так как он удерживает картинку в центре */
     position: relative !important; /* Даем браузеру понять, что элемент можно двигать */
 }
