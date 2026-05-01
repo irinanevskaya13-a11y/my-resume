@@ -65,7 +65,7 @@ html, body {
 .photo-container { position: relative; width: 180px; height: 180px; margin: 0 auto 25px; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; border-radius: 50%; }
 .photo { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); position: absolute; top: 0; left: 0; transition: opacity 0.5s ease; box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
 .gif-photo { opacity: 0; }
-.photo-container:hover { transform: scale(1.1); }
+.photo-container:hover { transform: scale(1.2); }
 .photo-container:hover .static-photo { opacity: 0; }
 .photo-container:hover .gif-photo { opacity: 1; }
 
