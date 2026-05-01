@@ -119,10 +119,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
 // Закрытие при клике в любое место оверлея
 overlay.addEventListener('click', () => {
     overlay.style.display = 'none';
+});
+
+
+
+
+
+
+
+
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('portfolio-image')) {
+        const full = document.createElement('div');
+        full.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.95); z-index:100000; display:flex; align-items:center; justify-content:center; cursor:zoom-out;';
+        
+        const clone = e.target.cloneNode();
+        clone.style.cssText = 'max-width:90%; max-height:90%; object-fit:contain; border:1px solid #6cccf5; box-shadow: 0 0 30px rgba(108,204,245,0.2);';
+        
+        full.appendChild(clone);
+        document.body.appendChild(full);
+        full.onclick = () => full.remove();
+    }
 });
