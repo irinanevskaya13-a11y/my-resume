@@ -119,13 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Закрытие при клике в любое место оверлея
-overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-});
-
-
-
 
 
 
