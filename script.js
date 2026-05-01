@@ -114,3 +114,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mouseover', (e) => { if (e.target.closest(selectors)) outline?.classList.add('cursor-hover'); });
     document.addEventListener('mouseout', (e) => { if (e.target.closest(selectors)) outline?.classList.remove('cursor-hover'); });
 });
+
+
+
+// Логика увеличения картинки
+const portfolioImg = document.querySelector('.portfolio-image');
+const overlay = document.getElementById('imageOverlay');
+const overlayImg = overlay.querySelector('img');
+
+if (portfolioImg) {
+    portfolioImg.addEventListener('click', () => {
+        overlayImg.src = portfolioImg.src; // Копируем путь к картинке
+        overlay.style.display = 'flex';   // Показываем слой
+    });
+}
+
+// Закрытие при клике в любое место оверлея
+overlay.addEventListener('click', () => {
+    overlay.style.display = 'none';
+});
