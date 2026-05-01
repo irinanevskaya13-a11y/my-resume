@@ -269,13 +269,15 @@ html, body {
 
 /* Настраиваем контейнер для картинки, чтобы он делил место с текстом */
 .image-display-container {
-    flex: 1;
-    display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     padding-bottom: 5px; /* Отступ от картинки до кнопки внизу */
+     margin-top: -60px !important; /* Увеличил число, чтобы эффект был заметен сразу */
+    display: block !important;    /* Отключаем flex, так как он удерживает картинку в центре */
+    position: relative !important; /* Даем браузеру понять, что элемент можно двигать */
 }
+
 
 /* Стили самого изображения */
 .portfolio-image {
