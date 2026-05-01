@@ -262,7 +262,7 @@ html, body {
 .portfolio-desc {
     color: white; 
     line-height: 1.6; 
-    margin-bottom: 10px; 
+    margin-bottom: 10px !important;
     font-size: 16px; 
     font-weight: 500;
 }
@@ -274,7 +274,7 @@ html, body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding-bottom: 20px; /* Отступ от картинки до кнопки внизу */
+    padding-bottom: 5px; /* Отступ от картинки до кнопки внизу */
 }
 
 /* Стили самого изображения */
