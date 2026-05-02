@@ -466,10 +466,7 @@ html, body {
 }
 
 .gallery-item {
-    width: 100%;
-    /* Оставляем твой max-height, теперь он будет работать корректно */
+
     max-height: 180px; 
-    border-radius: 10px;
-    overflow: hidden;
-    /* ... остальные стили ... */
+
 }
