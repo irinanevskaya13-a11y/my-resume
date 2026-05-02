@@ -454,14 +454,36 @@ html, body {
     margin-bottom: 15px !important; /* Уменьшили с 20px до 15px */
 }
 
-/* Если нужно еще выше, можно добавить отрицательный маржин самой галерее */
-.gallery-grid {
-    margin-top: -5px !important; 
-}
-
 
 
 
 .gallery-item {
     max-height: 180px; /* Установи лимит высоты (подбери число под себя) */
+}
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    /* 1. Вместо 1fr ставим auto, чтобы строки не растягивались */
+    grid-template-rows: auto auto; 
+    
+    /* 2. Настраиваем конкретный зазор между рядами (вертикальный) */
+    row-gap: 15px; 
+    /* Зазор между колонками (горизонтальный) */
+    column-gap: 15px; 
+    
+    /* 3. Убираем flex: 1, который заставляет сетку занимать всё место до низа */
+    flex: none !important; 
+    margin-top: -5px !important;
+}
+
+.gallery-item {
+    width: 100%;
+    /* Оставляем твой max-height, теперь он будет работать корректно */
+    max-height: 180px; 
+    border-radius: 10px;
+    overflow: hidden;
+    /* ... остальные стили ... */
 }
