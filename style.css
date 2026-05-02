@@ -441,21 +441,20 @@ html, body {
 
 
 
-/* Поднимаем всё содержимое 4-й страницы */
+#page3 .main-content {
+    padding-top: 20px !important; /* Уменьшили с 40px до 20px */
+}
+
 #page3 .accent-title-page {
-    margin-top: -30px !important; /* Вытягивает заголовок, а за ним и всё остальное */
-    margin-bottom: 10px !important; 
+    margin-bottom: 10px !important; /* Уменьшили с 25px до 10px */
 }
 
-/* Дополнительно уплотняем текст под заголовком */
-#page3 .portfolio-desc {
-    margin-top: 0 !important;
-    margin-bottom: 10px !important;
-    padding-top: 0 !important;
+.portfolio-desc {
+    /* ... твои текущие стили (font-size: 16px и т.д.) ... */
+    margin-bottom: 15px !important; /* Уменьшили с 20px до 15px */
 }
 
-/* Прижимаем галерею вплотную к тексту */
-#page3 .gallery-grid {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+/* Если нужно еще выше, можно добавить отрицательный маржин самой галерее */
+.gallery-grid {
+    margin-top: -5px !important; 
 }
