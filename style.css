@@ -363,3 +363,76 @@ html, body {
 
 @media (max-width: 1250px) { .scroll-nav { display: none; } }
 @media (max-width: 1000px) { .resume-wrapper { grid-template-columns: 1fr; height: auto; } .page-section { height: auto; } .scroll-container { overflow-y: auto; } .manifesto-body { grid-template-columns: 1fr; } }
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    /* 1. Разрешаем основному окну скроллиться */
+    html, body { 
+        overflow-y: auto !important; 
+    }
+
+    /* 2. Раскрываем карточку на всю ширину и убираем фикс-высоту */
+    .resume-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: auto !important;
+        min-height: unset !important;
+        max-width: 100%;
+        border-radius: 0; /* На мобилках без рамок выглядит чище */
+    }
+
+    /* 3. Убираем ограничение скролла в правой части */
+    .scroll-container {
+        overflow-y: visible !important;
+        height: auto !important;
+    }
+
+    /* 4. Каждая страница занимает столько места, сколько ей нужно */
+    .page-section-inner, .page-section {
+        height: auto !important;
+        padding: 10px 0 !important;
+    }
+
+    /* 5. Сайдбар теперь просто идет первым блоком сверху */
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding: 30px 20px;
+    }
+
+    /* 6. Уплотняем контент, чтобы не листать бесконечно */
+    .main-content {
+        padding: 25px 20px !important;
+    }
+
+    /* Скрываем элементы, которые мешают на тач-скринах */
+    .scroll-nav, .cursor-dot, .cursor-outline, .scroll-hint-text {
+        display: none !important;
+    }
+}
+
+
+
+
+
+@media (max-width: 600px) {
+    /* Достижения в одну колонку */
+    .achievements-grid, .logic-grid, .manifesto-body, .gallery-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .skills-bars-container {
+        gap: 15px;
+    }
+
+    /* Заголовки чуть поменьше для мобилок */
+    .accent-title-page {
+        font-size: 20px !important;
+    }
+}
+
