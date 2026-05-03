@@ -471,10 +471,11 @@ html, body {
 
 /* 3. Центрируем и поднимаем контейнер с картинкой */
 #page4 .image-display-container {
-    margin-top: 0 !important;
+    margin-top: 5px !important; /* Небольшой отступ от текста "Результат" */
     flex: none !important; /* Убираем растягивание */
     display: flex;
-    justify-content: flex-start; /* Прижимаем картинку к левому краю, как текст */
+    justify-content: center;    /* <--- Вот эта команда выровняет картинку по центру */
+    width: 100%;                /* Контейнер должен занимать всю ширину */
     height: auto !important;
 }
 
@@ -483,6 +484,6 @@ html, body {
     max-height: 160px !important; /* Уменьшаем высоту превью, чтобы не давило на низ */
     width: auto !important;
     border-radius: 8px;
-    margin: 0; /* Убираем авто-центрирование, если оно было */
+    margin: 0 auto;
 }
 
