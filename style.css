@@ -442,3 +442,47 @@ html, body {
 .gallery-item {
     max-height: 250px; /* Установи лимит высоты (подбери число под себя) */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1. Поднимаем всё содержимое страницы выше */
+#page4 .main-content {
+    padding-top: 25px !important; /* Было 40px */
+    justify-content: flex-start !important;
+}
+
+/* 2. Уплотняем зазоры в кейсах на 4 странице */
+#page4 .logic-grid {
+    margin-bottom: 10px !important;
+}
+
+#page4 .info-box {
+    margin-bottom: 10px !important;
+}
+
+/* 3. Центрируем и поднимаем контейнер с картинкой */
+#page4 .image-display-container {
+    margin-top: 0 !important;
+    flex: none !important; /* Убираем растягивание */
+    display: flex;
+    justify-content: flex-start; /* Прижимаем картинку к левому краю, как текст */
+    height: auto !important;
+}
+
+/* 4. Ограничиваем размер превью картинки */
+#page4 .portfolio-image {
+    max-height: 160px !important; /* Уменьшаем высоту превью, чтобы не давило на низ */
+    width: auto !important;
+    border-radius: 8px;
+    margin: 0; /* Убираем авто-центрирование, если оно было */
+}
+
