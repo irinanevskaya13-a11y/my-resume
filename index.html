@@ -256,10 +256,102 @@
                 <!-- СТРАНИЦА 4 -->
            <section class="page-section-inner" id="page4">
     <main class="main-content">
-        <h2 class="accent-title">Дашборды в Apache Superset</h2>
-        <div class="image-display-container">
+        <h1 class="accent-title-page">Инструментарий «умной» аналитической визуализации</h1>
+        
+        <nav class="tabs-nav">
+            <button class="tab-btn active" data-tab="smartX" onclick="openTab(event, 'smartX')">Умная ось X</button>
+            <button class="tab-btn" data-tab="smartY" onclick="openTab(event, 'smartY')">Умная ось Y</button>
+            <button class="tab-btn" data-tab="scaling" onclick="openTab(event, 'scaling')">Масштабирование</button>
+        </nav>
 
+        <!-- Контейнеры для кейсов -->
+        <div id="smartX" class="tab-content active-content fade-in">
+    <div class="experience-item">
+        <h2 class="typing-title typing-animation">Алгоритм адаптивной визуализации</h2>
+        <p class="portfolio-desc">
+            Разработка механизма «умных» подписей оси X для оперативного анализа сигналов SCADA-систем.
+        </p>
+        
+        <div class="logic-grid">
+            <div class="logic-box problem">
+                <h4>● Задача</h4>
+                <p>Исключить наложение текста подписей и сохранить читаемость при любом масштабе временных рядов (от минут до месяцев).</p>
+            </div>
+            <div class="logic-box solution">
+                <h4>● Реализация</h4>
+                <p>Python (Matplotlib). Логика автоматического выбора интервала тиков и формата даты (strftime) в зависимости от объема выборки.</p>
+            </div>
         </div>
+
+        <div class="info-box">
+            <strong>Результат:</strong> Чистый интерфейс, адаптирующийся под масштаб данных без потери информативности.
+        </div>
+
+        <!-- Миниатюра изображения -->
+        <div class="image-display-container" style="margin-top: 15px; max-height: 250px;">
+            <img src="assets/axex.jpg" alt="Кейс: Умная ось X" class="portfolio-image" style="max-height: 200px; cursor: zoom-in;">
+        </div>
+    </div>
+</div>
+
+       <div id="smartY" class="tab-content fade-in" style="display: none;">
+    <div class="experience-item">
+        <h2 class="typing-title">Алгоритм интеллектуального масштабирования оси Y</h2>
+        <p class="portfolio-desc">
+            Математическая логика построения читаемых шкал для исключения «дробного шума» и ошибок интерпретации.
+        </p>
+        
+        <div class="logic-grid">
+            <div class="logic-box problem">
+                <h4>● Задача</h4>
+                <p>Автоматически подбирать интервалы, кратные 1, 2, 5 или 10, исключая появление дробных значений сетки (вроде 133.33) при любом диапазоне.</p>
+            </div>
+            <div class="logic-box solution">
+                <h4>● Реализация</h4>
+                <p>Python. Расчет оптимального шага через логарифмирование и нормализацию диапазона. Алгоритм «умного» округления границ для создания визуального зазора.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Результат:</strong> Интуитивно понятные графики, упрощающие оперативный анализ и исключающие искажение восприятия данных.
+        </div>
+
+        <!-- Миниатюра изображения -->
+        <div class="image-display-container" style="margin-top: 15px; max-height: 250px;">
+            <img src="assets/axey.jpg" alt="Кейс: Умная ось Y" class="portfolio-image" style="max-height: 200px; cursor: zoom-in;">
+        </div>
+    </div>
+</div>
+
+       <div id="scaling" class="tab-content fade-in" style="display: none;">
+    <div class="experience-item">
+        <h2 class="typing-title">Инструментарий интерактивного анализа (Box Zoom)</h2>
+        <p class="portfolio-desc">
+            Реализация механизмов «погружения» в данные (Drill-down) для детального изучения аномалий на сложных графиках.
+        </p>
+        
+        <div class="logic-grid">
+            <div class="logic-box problem">
+                <h4>● Задача</h4>
+                <p>Обеспечить детальный анализ локальных выбросов на больших массивах данных без потери общего контекста и удобства навигации.</p>
+            </div>
+            <div class="logic-box solution">
+                <h4>● Реализация</h4>
+                <p>Python. Box Zoom: выделение области «рамкой» с пересчетом координат. Range Sliders: механизм плавной прокрутки и масштабирования осей ползунками.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Результат:</strong> Интуитивный механизм анализа трендов, позволяющий за секунды находить и локализовать аномалии в промышленных процессах.
+        </div>
+
+        <!-- Миниатюра изображения -->
+        <div class="image-display-container" style="margin-top: 15px; max-height: 250px;">
+            <img src="assets/zoom.jpg" alt="Кейс: Масштабирование" class="portfolio-image" style="max-height: 200px; cursor: zoom-in;">
+        </div>
+    </div>
+</div>
+
         <div class="scroll-hint-text" onclick="scrollToPage(4)">к следующей странице ↓</div>
     </main>
 </section>
