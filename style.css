@@ -107,23 +107,8 @@ html, body {
 
 /* КОНТЕНТ */
 .main-content { padding: 40px 60px; width: 100%; height: 100%; position: relative; background: #1e293b; display: flex; flex-direction: column; overflow: hidden; }
-
-
-.tabs-nav {
-    display: flex; /* Сменили с inline-flex для лучшего контроля */
-    flex-wrap: wrap; /* Разрешаем перенос на новую строку */
-    gap: 6px;
-    padding: 8px;
-    background: #0f172a;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    align-self: stretch; /* Растягиваем на всю ширину */
-}
-
-
-.tab-btn {    flex: 1 1 auto; /* Кнопки будут подстраиваться под текст */
-    min-width: 100px;
-    text-align: center; border: none; padding: 10px 20px; cursor: pointer; border-radius: 12px; font-weight: 600; color: #94a3b8; background: none; transition: 0.3s; font-size: 14px; }
+.tabs-nav { display: inline-flex; gap: 8px; padding: 6px; background: #0f172a; border-radius: 16px; margin-bottom: 25px; align-self: flex-start; flex-wrap: wrap; z-index: 10; }
+.tab-btn { border: none; padding: 10px 20px; cursor: pointer; border-radius: 12px; font-weight: 600; color: #94a3b8; background: none; transition: 0.3s; font-size: 14px; }
 .tab-btn.active { background: var(--accent); color: #0f172a; font-weight: 700; }
 .tab-content { display: none; width: 100%; position: relative; }
 .active-content { display: block !important; }
@@ -216,10 +201,7 @@ html, body {
 .nav-dot { width: 10px; height: 10px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; cursor: pointer; transition: 0.3s; }
 .nav-dot.active { background: var(--accent); transform: scale(1.5); }
 .nav-arrow { font-size: 22px; color: var(--accent); cursor: pointer; font-weight: bold; }
-.scroll-hint-text { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%);  /* УВЕЛИЧИВАЕМ ОБЛАСТЬ НАЖАТИЯ */
-    padding: 20px 40px; /* 20px сверху/снизу и 40px по бокам */
-    margin-bottom: -20px; /* Компенсируем нижний паддинг, чтобы текст остался на той же высоте */
-     font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; animation: bounceHint 2s infinite; cursor: pointer; z-index: 20; white-space: nowrap; }
+.scroll-hint-text { position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%); font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; animation: bounceHint 2s infinite; cursor: pointer; z-index: 20; white-space: nowrap; }
 
 @keyframes bounceHint { 0%, 100% { transform: translate(-50%, 0); opacity: 0.8; } 50% { transform: translate(-50%, -10px); opacity: 0.4; } }
 
@@ -461,73 +443,3 @@ html, body {
     max-height: 250px; /* Установи лимит высоты (подбери число под себя) */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/* 1. Поднимаем всё содержимое страницы выше */
-#page4 .main-content {
-    padding-top: 25px !important; /* Было 40px */
-    justify-content: flex-start !important;
-}
-
-/* 2. Уплотняем зазоры в кейсах на 4 странице */
-#page4 .logic-grid {
-    margin-bottom: 10px !important;
-}
-
-#page4 .info-box {
-    margin-bottom: 10px !important;
-}
-
-#page4 .image-display-container {
-    display: block !important;   /* Переключаем в блочный режим для работы авто-отступов */
-    width: 100% !important;      /* Контейнер обязан занять всю ширину контентной области */
-    text-align: center !important; /* Выравниваем содержимое (картинку) внутри по центру */
-    margin-top: 25px !important; 
-    margin-bottom: 0 !important;
-    flex: none !important;
-}
-
-#page4 .portfolio-image {
-    display: inline-block !important; /* Позволяет свойству text-align: center сработать */
-    max-height: 180px !important;
-    width: auto !important;
-    margin: 0 auto !important;   /* Дополнительная страховка центрирования */
-    border-radius: 8px;
-    cursor: zoom-in;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#page4 .tabs-nav {
-    margin-bottom: 20px !important; /* Уменьшили с 25px до 5px */
-}
-
-#page4 .typing-title {
-    margin-top: 10px !important;      /* Убираем отступ над заголовком */
-    margin-bottom: 12px !important; /* Уменьшили отступ под заголовком (был ~12px) */
-}
-
-#page4 .portfolio-desc {
-    margin-top: 0 !important;      /* Убираем лишний зазор сверху */
-    margin-bottom: 15px !important; /* Настраиваем комфортный зазор до карточек ЗАДАЧА/РЕАЛИЗАЦИЯ */
-}
