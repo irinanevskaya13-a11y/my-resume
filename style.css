@@ -480,7 +480,7 @@ html, body {
 
 #page4 .portfolio-image {
     display: inline-block !important; /* Позволяет свойству text-align: center сработать */
-    max-height: 160px !important;
+    max-height: 220px !important;
     width: auto !important;
     margin: 0 auto !important;   /* Дополнительная страховка центрирования */
     border-radius: 8px;
