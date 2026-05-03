@@ -201,7 +201,10 @@ html, body {
 .nav-dot { width: 10px; height: 10px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; cursor: pointer; transition: 0.3s; }
 .nav-dot.active { background: var(--accent); transform: scale(1.5); }
 .nav-arrow { font-size: 22px; color: var(--accent); cursor: pointer; font-weight: bold; }
-.scroll-hint-text { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; animation: bounceHint 2s infinite; cursor: pointer; z-index: 20; white-space: nowrap; }
+.scroll-hint-text { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%);  /* УВЕЛИЧИВАЕМ ОБЛАСТЬ НАЖАТИЯ */
+    padding: 20px 40px; /* 20px сверху/снизу и 40px по бокам */
+    margin-bottom: -20px; /* Компенсируем нижний паддинг, чтобы текст остался на той же высоте */
+     font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; animation: bounceHint 2s infinite; cursor: pointer; z-index: 20; white-space: nowrap; }
 
 @keyframes bounceHint { 0%, 100% { transform: translate(-50%, 0); opacity: 0.8; } 50% { transform: translate(-50%, -10px); opacity: 0.4; } }
 
